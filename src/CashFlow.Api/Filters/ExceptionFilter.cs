@@ -1,4 +1,5 @@
 ﻿using CashFlow.Communication.Responses;
+using CashFlow.Exception;
 using CashFlow.Exception.ExceptionsBase;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Filters;
@@ -43,7 +44,7 @@ namespace CashFlow.Api.Filters
         private void ThrowUnknownError(ExceptionContext context)
         {
             // Essa Parte ficava no controller
-            var errorResponse = new ResponseErrorJson("Unknown error while processing the request.");
+            var errorResponse = new ResponseErrorJson(ResourceErrorMessages.UNKNOWN_ERROR);
 
             // Precisamos retornar o status code 500, porém o ASP.NET Core não deixa setar o status code diretamente
             // Então precisamos setar o status code na resposta HTTP
