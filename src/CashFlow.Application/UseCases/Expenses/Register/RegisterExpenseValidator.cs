@@ -4,6 +4,7 @@ using FluentValidation;
 namespace CashFlow.Application.UseCases.Expenses.Register
 {
     // Validador para o registro de despesas
+    // Herda o AbstractValidator do FluentValidation, especificando o tipo RequestExpenseJson
     public class RegisterExpenseValidator : AbstractValidator<RequestExpenseJson>
     {
         public RegisterExpenseValidator()
